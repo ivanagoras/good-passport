@@ -1,0 +1,16 @@
+{
+"nombre": "buen-pasaporte",
+"versión": "1.0.0",
+"scripts": {
+"desarrollo": "invitar",
+"construir": "invitar a construir"
+},
+"dependencias": {
+"react": "^18.0.0",
+"react-dom": "^18.0.0"
+},
+"devDependencies": {
+"invitación": "^5.0.0",
+"@vitejs/plugin-react": "^4.0.0"
+}
+}
