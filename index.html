@@ -212,7 +212,8 @@ function showResult() {
   //document.getElementById('r-flag').textContent = currentFlag;
   //document.getElementById('r-flag').innerHTML =
   document.getElementById('r-flag').innerContent =
-  `<img src="${currentFlag}" class="result-flag">`;
+    <img src="flags/${country.code}.png" width="24">
+ ${country.name}`;
   document.getElementById('r-vname').textContent = `Visa ${currentVisaName}`;
   document.getElementById('r-num').textContent = `${pct}%`;
 
