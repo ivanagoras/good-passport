@@ -67,10 +67,10 @@
   <div class="card" id="step-visa">
     <div class="sec-title">¿A dónde quieres viajar?</div>
     <div class="visa-grid">
-      <button class="vbtn" onclick="selectVisa('usa','🇺🇸','Estados Unidos')"><span class="vflag"><img src="flags/us.png"></span><span class="vname">Estados Unidos</span></button>
-      <button class="vbtn" onclick="selectVisa('uk','🇬🇧','Reino Unido')"><span class="vflag"><img src="flags/gb.png"></span><span class="vname">Reino Unido</span></button>
-      <button class="vbtn" onclick="selectVisa('canada','🇨🇦','Canadá')"><span class="vflag"><img src="flags/ca.png"></span><span class="vname">Canadá</span></button>
-      <button class="vbtn" onclick="selectVisa('australia','🇦🇺','Australia')"><span class="vflag"><img src="flags/au.png"></span><span class="vname">Australia</span></button>
+      <button class="vbtn" onclick="selectVisa('usa','flags/us.png','Estados Unidos')"><span class="vflag"><img src="flags/us.png"></span><span class="vname">Estados Unidos</span></button>
+      <button class="vbtn" onclick="selectVisa('uk','flags/gb.png','Reino Unido')"><span class="vflag"><img src="flags/gb.png"></span><span class="vname">Reino Unido</span></button>
+      <button class="vbtn" onclick="selectVisa('canada','flags/ca.png','Canadá')"><span class="vflag"><img src="flags/ca.png"></span><span class="vname">Canadá</span></button>
+      <button class="vbtn" onclick="selectVisa('australia','flags/au.png','Australia')"><span class="vflag"><img src="flags/au.png"></span><span class="vname">Australia</span></button>
     </div>
   </div>
 
@@ -210,6 +210,9 @@ function showResult() {
   document.getElementById('step-questions').classList.add('hidden');
   document.getElementById('step-result').classList.remove('hidden');
   //document.getElementById('r-flag').textContent = currentFlag;
+
+console.log(currentFlag);
+
   document.getElementById('r-flag').innerHTML =
   //document.getElementById('r-flag').innerContent =
   `<img src="${currentFlag}" class="result-flag">`;
