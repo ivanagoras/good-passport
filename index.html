@@ -31,7 +31,10 @@
     .opt:hover { background: rgba(232,201,126,0.1); border-color: rgba(232,201,126,0.4); color: #f0f0ff; }
     .opt.sel { background: rgba(232,201,126,0.18); border-color: #e8c97e; color: #e8c97e; }
     .r-center { text-align: center; }
+    
+    
     .r-flag { font-size: 44px; margin-bottom: 6px; }
+    .result-flag{width:64px; height:auto; display:block; margin:0 auto; }
     .r-vname { font-size: 11px; color: #8080a0; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px; }
     .ring { width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 3px solid; }
     .ring-num { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; }
@@ -54,8 +57,8 @@
 <body>
 <div class="wrap">
   <div class="header">
-    <span class="globe"><img src="Logo.GoodPassport.png" style= width:25%;></span>
-    <div class="brand"><img src="GoodPassport.png" style= width:30%;></div>
+    <span class="globe"><img src="/private/var/mobile/Containers/Data/Application/2CC6A873-920D-4BDE-B471-9987D8E9AE32/Documents/KeepData/script/goodpassport.png" style= width:25%;></span>
+    <div class="brand"><img src="/private/var/mobile/Containers/Data/Application/2CC6A873-920D-4BDE-B471-9987D8E9AE32/Documents/KeepData/script/good.passport.png" style= width:30%;></div>
     <div class="brand-sub">Asesoría de visas</div>
     <p class="subtitle" id="intro-text">Descubre en 2 minutos qué tan listo está tu perfil para obtener tu visa. Selecciona el país al que quieres viajar.</p>
   </div>
@@ -64,10 +67,10 @@
   <div class="card" id="step-visa">
     <div class="sec-title">¿A dónde quieres viajar?</div>
     <div class="visa-grid">
-      <button class="vbtn" onclick="selectVisa('usa','🇺🇸','Estados Unidos')"><span class="vflag"><img src="us.png"></span><span class="vname">Estados Unidos</span></button>
-      <button class="vbtn" onclick="selectVisa('uk','🇬🇧','Reino Unido')"><span class="vflag"><img src="gb.png"></span><span class="vname">Reino Unido</span></button>
-      <button class="vbtn" onclick="selectVisa('canada','🇨🇦','Canadá')"><span class="vflag"><img src="ca.png"></span><span class="vname">Canadá</span></button>
-      <button class="vbtn" onclick="selectVisa('australia','🇦🇺','Australia')"><span class="vflag"><img src="au.png"></span><span class="vname">Australia</span></button>
+      <button class="vbtn" onclick="selectVisa('usa','🇺🇸','Estados Unidos')"><span class="vflag"><img src="/private/var/mobile/Containers/Data/Application/2CC6A873-920D-4BDE-B471-9987D8E9AE32/Documents/KeepData/script/images/flags/us.png"></span><span class="vname">Estados Unidos</span></button>
+      <button class="vbtn" onclick="selectVisa('uk','🇬🇧','Reino Unido')"><span class="vflag"><img src="/private/var/mobile/Containers/Data/Application/2CC6A873-920D-4BDE-B471-9987D8E9AE32/Documents/KeepData/script/images/flags/gb.png"></span><span class="vname">Reino Unido</span></button>
+      <button class="vbtn" onclick="selectVisa('canada','🇨🇦','Canadá')"><span class="vflag"><img src="/private/var/mobile/Containers/Data/Application/2CC6A873-920D-4BDE-B471-9987D8E9AE32/Documents/KeepData/script/images/flags/ca.png"></span><span class="vname">Canadá</span></button>
+      <button class="vbtn" onclick="selectVisa('australia','🇦🇺','Australia')"><span class="vflag"><img src="/private/var/mobile/Containers/Data/Application/2CC6A873-920D-4BDE-B471-9987D8E9AE32/Documents/KeepData/script/images/flags/au.png"></span><span class="vname">Australia</span></button>
     </div>
   </div>
 
@@ -85,6 +88,8 @@
   <!-- STEP 3: Result -->
   <div class="card r-center hidden" id="step-result">
     <div class="r-flag" id="r-flag"></div>
+    
+    
     <div class="r-vname" id="r-vname"></div>
     <div class="ring" id="r-ring">
       <span class="ring-num" id="r-num"></span>
@@ -204,7 +209,9 @@ function showResult() {
   const pct = Math.round((score / maxScore) * 100);
   document.getElementById('step-questions').classList.add('hidden');
   document.getElementById('step-result').classList.remove('hidden');
-  document.getElementById('r-flag').textContent = currentFlag;
+  //document.getElementById('r-flag').textContent = currentFlag;
+  document.getElementById('r-flag').innerHTML =
+  `<img src="${currentFlag}" class="result-flag">`;
   document.getElementById('r-vname').textContent = `Visa ${currentVisaName}`;
   document.getElementById('r-num').textContent = `${pct}%`;
 
